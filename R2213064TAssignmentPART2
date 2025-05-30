@@ -1,0 +1,26 @@
+import math
+ 
+ 
+ #omitting intermediate sights since it offers no progressive change #
+ 
+ 
+RL=float(input("enter reduced level at Start Point:"))
+BS1=float(input("enter backsight at point 1:"))
+BS2=float(input("enter backsight at point 2:"))
+BS3=float(input("enter backsight at point 3:"))
+BS4=float(input("enter backsight at point 4:"))
+BS5=float(input("enter backsight at point 5:"))
+BS6=float(input("enter backsight at point 6:"))
+FS1=float(input("enter foresight at point 1:"))
+FS2=float(input("enter foresight at point 2:"))
+FS3=float(input("enter foresight at point 3:"))
+FS4=float(input("enter foresight at point 4:"))
+FS5=float(input("enter foresight at point 5:"))
+FS6=float(input("enter foresight at point 6:"))
+FS7=float(input("enter foresight at point 7:"))
+
+
+
+
+RL_at_point_n = RL + ((BS1+BS2+BS3+BS4+BS5+BS6)-(FS1+FS2+FS3+FS4+FS5+FS6+FS7))
+print("the reduced level is:", RL_at_point_n)
