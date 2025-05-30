@@ -1,0 +1,42 @@
+import math
+
+x1=float(input("enter x coordinate for point 1:"))
+y1=float(input("enter y coordinate for point 1:"))
+x2=float(input("enter x coordinate for point 2:"))
+y2=float(input("enter y coordinate for point 2:"))
+dx=(x2-x1)
+dy=(y2-y1)
+
+distance=math.sqrt(dy*dy + dx*dx)
+
+# Calculate raw bearing angle in radians
+angle_rad = math.atan2(abs(dy), abs(dx))
+angle = math.degrees(angle_rad)
+
+if dy >= 0 and dx > 0:
+        bearing = angle
+elif dy > 0 and dx <= 0:
+        bearing = 180 - angle
+elif dy <= 0 and dx < 0:
+        bearing = 180 + angle
+elif dy < 0 and dx >= 0:
+        bearing = 360 - angle
+  
+      # Convert to DMS
+degrees = int(bearing)
+minutes_float = (bearing - degrees) * 60
+minutes = int(minutes_float)
+seconds = round((minutes_float - minutes) * 60)
+    
+if seconds == 60:
+     seconds = 0
+     minutes += 1
+if minutes == 60:
+     minutes = 0
+     degrees = (degrees + 1) % 360
+    
+    # Display result
+
+print(f"\nThe distance direction from Point 1 to Point 2:")
+print("the horizontal distance is:",distance)
+print(f"DMS: {degrees}° {minutes}' {seconds}\"")
